@@ -1,0 +1,159 @@
+@use '../../partials/colors' as *;
+@use '../../partials/mixins' as *;
+@use '../../partials/variables' as *;
+@use '../../partials/typography' as *;
+
+.video{
+    &-channel__style{
+    font-weight: bold;
+    display: inline-block;
+
+        @include desktop{
+        width: 15rem;
+        text-align: left;
+        width: 12rem;
+    }
+    }
+    &-title__style{
+    text-align: left;
+        @include tablet{
+        font-size: $font-size * 2
+        }
+        @include desktop{
+        width: 50rem;
+        margin-top: 5rem;
+        }
+    }
+    &-timestamp__style{
+    color: $mercury;
+    
+        @include desktop{
+        padding-bottom: 2rem;
+        width: 10rem;
+        }
+    }
+    &-description__style{
+    font-weight: 300;
+    text-align: left;
+    padding-top: 1rem;
+    width: 20rem;
+        @include tablet{
+        font-size: $font-size;
+        width: 40rem;
+        }
+        @include desktop{
+        padding-top:5rem;
+        }
+    }
+    &-body__style{
+    width: 90%;
+    margin: 0 auto;
+        @include tablet{
+        width: 90%;
+        }
+        @include desktop{
+        width: 95%;
+        margin: 0 auto;
+        }
+        
+    }
+}
+
+.selectedentry__style{
+        @include desktop{
+        width: 40%;
+        margin: auto 0;
+        display: flex;
+    }
+}
+
+.mainvideo-channel__container{
+    display: flex;
+        @include tablet{
+        font-size: $font-size;
+    }
+}
+
+.image__style{
+    width: $margin * 2;
+    height: $margin + 0.5rem;
+}
+
+.comment{
+    &__style{
+    list-style-type: none;
+    }
+    &__number{
+    font-weight: bold;
+    text-align: left;
+    margin-top: $margin - 0.5rem;
+    
+        @include desktop{
+        margin-top:5rem;
+        }
+    }
+
+}
+
+.views{
+    &__container{
+    display: flex;
+    margin-bottom: $margin - 0.5rem;
+
+    @include tablet{
+        font-size: $font-size;
+    }
+    @include desktop{
+        margin-left: 5rem;
+        width: 50rem;
+        margin-right: -30rem;
+    }
+    }
+    &__style{
+    margin-right: 0.5rem;
+        @include desktop{
+        margin-left: $margin - 0.5rem;
+        } 
+    }
+
+}
+
+.likes__style{
+    margin: 0rem 1rem;
+}
+
+
+.mainvideo-container__style{
+    border-bottom: 2px solid $mercury;
+        @include tablet{
+        display: flex;
+        justify-content: space-between;
+        width: 50rem;
+    }
+}
+
+
+.video-poster__style{
+    width: 100vw;
+    background-color: $black;
+}
+
+.likes__style, .views__style{
+    height: 4vh;
+}
+
+.pseudo-videolist-container__style{
+    display: none;
+        @include desktop{
+        display:initial;
+        width: 97%;
+        margin: 0 auto;
+        padding-left: 4rem;
+        margin-top: 55rem;
+        margin-left: -28rem;
+        border-left: 2px solid $mercury;
+        }
+    }
+    
+
+

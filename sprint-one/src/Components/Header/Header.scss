@@ -1,0 +1,119 @@
+@use '../../partials/colors' as *;
+@use '../../partials/mixins' as *;
+@use '../../partials/variables' as *;
+@use '../../partials/typography' as *;
+
+.header{
+    font-family: "Avenir";
+    text-align: center;
+    margin-bottom: 1rem;
+    @include tablet{
+        display: flex;
+        justify-content: space-between;
+    }
+    @include desktop{
+        width: 80%;
+        margin: 0 auto;
+        margin-bottom: 1rem;
+    }
+    &__content{
+        @include tablet{
+        display: inline-block;
+        }
+    }
+    &__logo{
+    border: none;
+    }
+}
+
+
+.form__style{
+    @include tablet{
+        display: flex;
+    }
+   
+}
+.searchIcon{
+    background-image: url(../../assets/Icons/Icon-search.svg);
+    background-repeat: no-repeat; 
+    background-size: 3vh;
+    background-position: 0.1rem;
+    width: 20%;
+}
+
+#search{
+    border-radius: 5px;
+    margin-top: 1rem;
+    border-color: $silver;
+    background-color: $mercury;
+    height: 3rem;
+    width: 25rem;
+    @include tablet{
+        margin-bottom: 0rem;
+        margin-left: -8rem;
+        width:15vw;
+    }
+    @include desktop{
+        margin-bottom: 0rem;
+        margin-left: 1rem;
+    }
+
+    &::placeholder{
+        padding-left: 2rem;
+    }
+}
+
+#upload__button{
+    background-color: $brainflix-blue;
+    color: $white;
+    font-weight: bold;
+    margin-top: 0.5rem;
+    border-radius: 6px;
+    width: 15rem;
+    height: 3rem;
+    margin-right:1rem;
+    cursor: pointer;
+    border: none;
+
+    &:hover{
+        background-color: $cta-hover
+    }
+
+    @include tablet{
+        height: 3rem;
+        width: 10rem;
+        margin: 1rem 1rem 0 2rem;
+        
+    }
+    @include desktop{
+        margin: 1rem 1rem 0 2rem;
+    }
+}
+
+.avatar{
+    height: 3rem;
+    border-radius: 50%;
+    width: 2.5rem;
+    margin-top: 0.5rem;
+    border: none;
+    @include tablet{
+        margin-top: 1rem;
+        margin-right: 5rem;
+        display: block;
+    }
+    @include desktop{
+        display: inline-block;
+    }
+}
+
+.button__style{
+    display: flex;
+    justify-content: center;
+    @include tablet{
+        display: flex;
+        align-items: center
+    }
+    @include desktop{
+        display: flex;
+    }
+}

@@ -1,0 +1,115 @@
+@use '../src/partials/colors' as *;
+@use '../src/partials/mixins' as *;
+@use '../src/partials/variables' as *;
+@use '../src/partials/typography' as *;
+
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.App {
+  text-align: center;
+  background-color: $white;
+  font-family: "Avenir"
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+
+.header{
+  font-family: "Avenir";
+  text-align: center;
+  margin-bottom: 1rem;
+  @include tablet{
+      display: flex;
+      justify-content: space-between;
+  }
+  @include desktop{
+      width: 80%;
+      margin: 0 auto;
+      margin-bottom: 1rem;
+  }
+}
+
+.header__logo{
+  border: 2px solid green;
+}
+.form__style{
+  @include tablet{
+      display: flex;
+  }
+  // display: block;
+ 
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+#upload__button{
+  background-color: $brainflix-blue;
+  color: $white;
+  font-weight: bold;
+  margin-top: 0.5rem;
+  border-radius: 6px;
+  border: 2px solid purple;
+  width: 15rem;
+  height: 3rem;
+
+  @include tablet{
+      height: 3rem;
+      width: 10rem;
+      margin: 1rem 1rem 0 2rem;
+      
+  }
+  @include desktop{
+      margin: 1rem 1rem 0 2rem;
+  }
+}
+
+.avatar{
+  height: 3rem;
+  border-radius: 50%;
+  width: 2.5rem;
+  border: 2px solid red;
+  @include tablet{
+      margin-top: 1rem;
+      margin-right: 5rem;
+      display: block;
+  }
+  @include desktop{
+      display: inline-block;
+  }
+}
+
+.button__style{
+  display: flex;
+  justify-content: center;
+  @include tablet{
+  display: flex;
+  align-items: center
+  }
+  @include desktop{
+      display: flex;
+  }
+}
+
+.header__content{
+  @include tablet{
+      display: inline-block;
+  }
+}
