@@ -22,14 +22,18 @@
     text-align: center;
     width: 13rem;
     margin: 0 auto;
+    text-align:left;
+    padding-left: 0.5rem;
 
         @include tablet{
         width: 90%;
         margin-left: $margin * 2;
         text-align: left;
+        padding-left: 0rem;
     }
         @include desktop{
         width: 40rem;
+        padding-left: 0rem;
     }
     }
 
