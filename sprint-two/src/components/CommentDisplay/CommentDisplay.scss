@@ -1,0 +1,77 @@
+@use '../../styles/partials/colors' as *;
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/typography' as *;
+
+.comment__style{
+    border-top: 2px solid $mercury;
+    padding-bottom: 1rem;
+    width: 18rem;
+    text-align: left;
+    @include tablet{
+        width: 100%;
+        text-align: left
+        }
+    @include desktop{
+        width: 66%;
+        }
+}
+
+.comment{
+    &-body__style{
+    text-align: center;
+    width: 13rem;
+    margin: 0 auto;
+    text-align:left;
+    padding-left: 0.5rem;
+
+    @include tablet{
+        width: 90%;
+        margin-left: $margin * 2;
+        text-align: left;
+        padding-left: 0rem;
+    }
+    @include desktop{
+        width: 40rem;
+        padding-left: 0rem;
+    }
+    }
+
+    &-date__style{
+    color: $mercury;
+    margin-left: $margin - 0.5rem;
+    }
+}
+
+.card__photo{
+    height: $margin + 0.5rem;
+    width: $margin + 0.5rem;
+    border-radius: 50%;
+    margin-top: $margin - 0.5rem;
+    background-color: $mercury;
+    margin-right: $margin - 0.5rem;
+}
+
+.comment{
+    &-photo__style{
+    display:flex;
+    align-items:center;
+    }
+    &-name__style{
+    display:flex;
+    align-items:center;
+    }
+    &__style{
+    list-style-type: none;
+    }
+    &__number{
+    font-weight: bold;
+    text-align: left;
+    margin-top: 1rem;
+    
+        @include desktop{
+        margin-top: $margin + 3.5rem;
+        }
+    }
+
+}

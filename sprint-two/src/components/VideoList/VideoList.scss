@@ -1,0 +1,77 @@
+@use '../../styles/partials/colors' as *;
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/typography' as *;
+
+.nextvideo{
+    &-title__style{
+    color: $mercury;
+    border-top: 2px solid $mercury;
+    padding-top: 1rem;
+    text-align: left;
+
+    @include desktop{
+        width: 20rem;
+        border-top: none;
+        margin-bottom: $margin + 0.5rem
+        }
+    }
+    &__style{
+    border-radius: 15px;
+    padding: 0.5rem 0;
+    }
+    &__container{
+    width: 20rem;
+    }
+    &__flex{
+    display: flex;
+    }
+    &-desc__style{
+    font-weight: 600;
+    color: $black;
+    width: 10rem;
+    padding: 1rem 0 0.2rem 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    @include tablet{
+        white-space:normal;
+           
+        }
+    @include desktop{
+        padding-top: 1rem;
+        }
+    }
+}
+.videolist{
+    &__style{
+    list-style-type: none;
+    }
+    &-container__style{
+    width: 97%;
+    margin: 0 auto;
+    padding-left: $padding + 0.5rem;
+    @include tablet{
+        padding-left: $padding + 0.5rem;
+        }
+    @include desktop{
+        border-left: 2px solid $mercury;
+        padding-left: $padding + 0.5rem;
+        margin-top: 57rem;
+        margin-left: 25rem;        
+        }   
+    }
+    &__content{
+    @include desktop{          
+        }
+    }
+}
+
+.flex-component{
+    @include desktop{
+        display:flex;
+    }
+}
+
+
+
