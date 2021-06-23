@@ -1,0 +1,164 @@
+@use '../../styles/partials/colors' as *;
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/typography' as *;
+
+.upload__container{
+    border-top: 2px solid $mercury;
+    padding-top: 3rem;
+    width: 90%;
+    margin: 0 auto;
+    @include desktop{
+        width: 80%;
+        margin: 0 auto;
+        border-bottom: 2px solid $mercury;
+        padding-bottom: $padding * 2;
+        }
+}
+
+.header{
+    &-title__style{
+    margin-bottom: 3rem;
+    text-align:left;
+    @include tablet{
+        border-bottom: 2px solid $mercury;
+        padding-bottom: 1.5rem;
+    }
+    }
+    &-thumbnail__style{
+    color: $mercury;
+    text-align: left;
+    }
+}
+
+.upload-image{
+    border-radius: 10px;
+    height: 20rem;
+    width: 90vw;
+    min-width:25rem;
+    @include tablet{
+        width: 25rem;
+        display:block;
+        height: 15rem;
+    }
+    @include desktop{
+        width:30rem;
+        height: 17rem;
+    }
+}
+
+.video-upload__container{
+    @include tablet{
+        display: block;
+    }
+    @include desktop{
+        display:flex;
+        align-items: center;
+        height: 20rem;
+}
+
+.form__style{
+    @include tablet{
+        display: block;
+    }
+    @include desktop{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin-top:8rem;
+        margin-left:1rem;
+    }
+}
+}
+
+#label, #description-label{
+    color: $mercury;
+    display: block;
+    margin-bottom: 0.5rem;
+    @include tablet{
+        margin: $margin 0;
+        text-align: left;
+    }
+    @include desktop{
+        margin-bottom: 0.5rem;
+    }
+}
+
+#upload, #description{
+    border-color: $mercury;
+    margin-bottom: 1rem;
+    display: block;
+    border-radius: 5px;
+    
+    &::placeholder{
+    color:black;
+    font-weight: 600;
+    padding-left: $padding;
+    }
+   
+}
+
+#upload{
+    width: 90vw;
+    height: 3rem;
+    @include tablet{
+        width: 100%;
+    }
+    @include desktop{
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+}
+
+#description{
+    width: 90vw;
+    height: 10rem;
+    @include tablet{
+    width: 100%;
+    margin-bottom: 4rem;
+    }
+}
+
+.button-publish__style{
+    width: 90vw;
+    display: block;
+    color: $white;
+    background-color: $brainflix-blue;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    &:hover{
+    background-color: $cta-hover
+    }
+    @include tablet{
+        width: 10rem;
+        height: 3rem;
+    }
+}
+
+.button-cancel__style{
+    width: 90vw;
+    display: block;
+    color: $brainflix-blue;
+    background-color: transparent;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+
+    @include tablet{
+        width: 10rem;
+        height: 3rem;
+    }
+}
+
+.button-container{
+    @include tablet{
+        flex-direction: row-reverse;
+        padding-top: 2rem;
+        display: flex;
+    }
+    @include desktop{
+        display: flex;
+    }
+}

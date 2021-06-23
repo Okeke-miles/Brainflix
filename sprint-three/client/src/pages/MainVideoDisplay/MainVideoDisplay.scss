@@ -1,0 +1,188 @@
+@use '../../styles/partials/colors' as *;
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/typography' as *;
+
+.video{
+    &-channel__style{
+    font-weight: 600;
+    display: flex;
+
+    @include desktop{
+        width: 15rem;
+        text-align: left;
+        width: 13rem;
+    }
+    }
+    &-title__style{
+    text-align: left;
+    @include tablet{
+        font-size: $font-size * 2;
+        }
+    @include desktop{
+        width: 50rem;
+        margin-top: 5rem;
+        }
+    }
+    &-timestamp__style{
+    color: $mercury;
+    margin-left: 0.5rem;
+    
+    @include desktop{
+        padding-bottom: 2rem;
+        width: 10rem;
+        }
+    }
+    &-description__style{
+    font-weight: 300;
+    text-align: left;
+    padding-top: 1rem;
+    width: 20rem;
+    @include tablet{
+        font-size: $font-size;
+        width: 40rem;
+        }
+    @include desktop{
+        padding-top:5rem;
+        }
+    }
+    &-body__style{
+    width: 90%;
+    margin: 0 auto;
+    @include tablet{
+        width: 90%;
+        }
+    @include desktop{
+        width: 95%;
+        margin: 0 auto;
+        }   
+    }
+}
+
+.selectedentry__style{
+    @include desktop{
+        width: 40%;
+        margin: auto 0;
+        display: flex;
+    }
+}
+
+.mainvideo-channel__container{
+    display: flex;
+    margin: 1rem 0;
+    @include tablet{
+        font-size: $font-size;
+    }
+}
+
+.image__style{
+    width: $margin * 2;
+    height: $margin + 0.5rem;
+ 
+}
+.comment-area__style{
+    margin-right: 0.5rem;
+}
+.comment{
+    &-name__style{
+    margin-right: 1px;
+    font-weight: 600;
+    width:19rem;
+    }
+    &-body__style{
+    width: 17rem;
+    text-align: left;
+    margin-left: 2.5rem;
+    @include tablet{
+        width: 45rem;
+        margin-left: 3rem;
+        }
+    @include desktop{
+        width: 50rem;
+        margin-left: 3rem;
+        }
+    }
+    &__style{
+    list-style-type: none;
+    @include tablet{
+        width: 100%;
+    }
+    @include desktop{
+        width: 65%;
+    }
+    }
+    &__number{
+    font-weight: 600;
+    text-align: left;
+    margin-top: $margin - 0.5rem;
+    
+    @include desktop{
+        margin-top:5rem;
+        }
+    }
+}
+
+.views{
+    &__container{
+    display: flex;
+    margin-bottom: $margin - 0.5rem;
+    font-weight: normal;
+
+    @include tablet{ 
+        font-size: $font-size;
+    }
+    @include desktop{
+        margin-left: 8rem;
+        width: 35rem;
+        margin-top: 0rem;
+    }
+    }
+    &__style{
+    margin-right: 0.5rem;
+    @include desktop{
+        margin-left: -3rem;
+        } 
+    }
+}
+
+.likes__style{
+    margin: 0rem 1rem;
+}
+
+
+.video-poster__style{
+    width: 100vw;
+    background-color: $black;
+}
+
+.likes__style, .views__style{
+    height:2vh;
+    @include tablet{
+        height:3vh;
+    }
+    @include desktop{
+        height: 3vh;
+    }
+}
+
+.mainvideo-container__style{
+    display:block;
+    @include tablet{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    @include desktop{
+        display:flex;
+        border-bottom: 2px solid $mercury;
+        width: 62%;
+    }
+}
+
+.loading__message{
+    font-size: $font-size * 2;
+    color: $brainflix-blue;
+}
+    
+
+

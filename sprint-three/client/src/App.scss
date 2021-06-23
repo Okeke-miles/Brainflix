@@ -1,0 +1,94 @@
+@use '../src/styles/partials/colors' as *;
+@use '../src/styles/partials/mixins' as *;
+@use '../src/styles/partials/variables' as *;
+@use '../src/styles/partials/typography' as *;
+
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.App {
+  text-align: center;
+  background-color: $white;
+  font-family: "Avenir"
+}
+
+.header{
+  font-family: "Avenir";
+  text-align: center;
+  margin-bottom: 1rem;
+  @include tablet{
+      display: flex;
+      justify-content: space-between;
+  }
+  @include desktop{
+      width: 80%;
+      margin: 0 auto;
+      margin-bottom: 1rem;
+  }
+}
+
+.form__style{
+  @include tablet{
+      display: flex;
+  }
+ 
+}
+
+
+#upload__button{
+  background-color: $brainflix-blue;
+  color: $white;
+  font-weight: bold;
+  margin-top: 0.5rem;
+  border-radius: 6px;
+  border: 2px solid purple;
+  width: 15rem;
+  height: 3rem;
+
+  @include tablet{
+      height: 3rem;
+      width: 10rem;
+      margin: 1rem 1rem 0 2rem;
+      
+  }
+  @include desktop{
+      margin: 1rem 1rem 0 2rem;
+  }
+}
+
+.avatar{
+  height: 3rem;
+  border-radius: 50%;
+  width: 2.5rem;
+  @include tablet{
+      margin-top: 1rem;
+      margin-right: 5rem;
+      display: block;
+  }
+  @include desktop{
+      display: inline-block;
+  }
+}
+
+.button__style{
+  display: flex;
+  justify-content: center;
+  @include tablet{
+  display: flex;
+  align-items: center
+  }
+  @include desktop{
+      display: flex;
+  }
+}
+
+.header__content{
+  @include tablet{
+      display: inline-block;
+  }
+}
