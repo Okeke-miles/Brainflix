@@ -78,8 +78,9 @@ router.post('/', (req, res) => {
   router.put('/:videoId/likes', (req, res) => {
     let { videoId } = req.params;
     const videoInfo = mainVideo.find(video => video.id === videoId)
-    let likes = parseInt(videoInfo.likes)
-    res.json(likes)
+    let likes = parseInt(videoInfo.likes++)
+    fs.writeFile("./data/video-details.json", JSON.stringify(mainVideo, null, 2), () => console.log('data has been persisted'))
+    res.status(200).json(likes)
   })
 
   
