@@ -6,7 +6,6 @@ import "../../App.scss"
 import "../MainVideoDisplay/MainVideoDisplay.scss";
 import like from "../../assets/icons/Icon-likes.svg";
 import views from "../../assets/icons/Icon-views.svg";
-import {API_KEY, API_URL} from "../../utils/api";
 import axios from "axios";
 
 class mainVideoDisplay extends Component {
@@ -44,12 +43,20 @@ class mainVideoDisplay extends Component {
     componentDidUpdate(prevProps){
       const { videoId } = this.props;
 
-      if(videoId !== prevProps.videoId) {
+      if(videoId !== prevProps.videoId && videoId !== null)  {
           this.getVideoId(videoId)
       }
     }
+
+    
     
     render(){
+        // const LikeIncrement = (e) => {
+        //     const { videoId } = this.props;
+        //     axios.put(`http://localhost:9000/api/mainvideo/${videoId}/likes`, videoId.likes)
+        //     .then(res=> console.log(res))
+        // }
+    
     
         if (this.state.mainVideoDisplay===null){
             return <span className="loading__message">Please wait...</span>

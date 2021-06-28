@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import {NavLink} from "react-router-dom"
 import "../../App.scss"
 import "../VideoList/VideoList.scss"
-import {API_KEY, API_URL} from "../../utils/api";
 import axios from "axios"
 import MainVideoDisplay from "../../pages/MainVideoDisplay/MainVideoDisplay"
 
@@ -18,13 +17,13 @@ class VideoList extends Component{
 //on mount lifecyle, I set videolist to the data from the API and videoid to a set video id. In order to make sure the dynamic url is functional, I use match.params in an "if statement". Where the match.params does not equal the videoid state and is also not undefined, the state (videoid) is changed to reflect the match.params. I used the && operator to cover for any leakages.
 
     componentDidMount(){
-      axios.get(`${API_URL}videos?api_key=${API_KEY}`)
+      axios.get(`/api/videolist`)
       .then(res => res.data)
       .then(data => {
         
         this.setState({
           videoList: data,
-          videoId: data[0].id
+          videoId: data[0].id,
         });
 
         let { videoId } = this.props.match.params;
@@ -36,7 +35,7 @@ class VideoList extends Component{
       .catch(error=>{console.log(error)})
       }
 
-
+      
 //on update lifecyle, i compare the current match.params with the previous match.params. This is also to ensure the dynamic url is functional upon each update.
 
     componentDidUpdate(prevProps){
@@ -44,11 +43,11 @@ class VideoList extends Component{
 
       if(videoId !== prevProps.match.params.videoId)  {
           this.setState({ videoId: videoId })
-          console.log(this.state.videoId)
       }   
     }
     
   render(){
+
     //I use a filter method (combined with a map method) to render out my UI through pieces of my state.
       return (
         
