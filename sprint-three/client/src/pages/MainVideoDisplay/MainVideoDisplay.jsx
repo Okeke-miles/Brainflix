@@ -8,40 +8,44 @@ import like from "../../assets/icons/Icon-likes.svg";
 import views from "../../assets/icons/Icon-views.svg";
 import axios from "axios";
 
+
 class mainVideoDisplay extends Component {
 //I set state for the main video to null, in the first instance.
 
     state = {
         mainVideoDisplay: null,
+        comments: []
     }
     
 //I create a function seeking to get a video id, using axios.get. This is the id of the video that will be displayed as the main video.
 
     getVideoId(videoId) {
         if(videoId === null){
-            return false;
+            return false
           }
         return axios.get(`/api/mainvideo/${videoId}`)
         .then(res => {
           this.setState({
-              mainVideoDisplay: res.data, 
+              mainVideoDisplay: res.data,
+              comments: res.data.comments
           })
         })
         .catch(error=>{console.log(error)})
     }
+
      
 //On mount lifecycle, I set videoid to the props which is passed from the videolist container. Therefore, on mount, the parameter for the function above will be set to the props being passed from the VideoList component.
 
     componentDidMount(){   
-      const { videoId } = this.props;
+      const { videoId } = this.props
      
-      this.getVideoId(videoId);
+      this.getVideoId(videoId)
     }
 
 //On update lifecycle, a similar function is set, however this is only set if the props being passed from the VideoList component is not equal to the previous props.
 
     componentDidUpdate(prevProps){
-      const { videoId } = this.props;
+      const { videoId } = this.props
 
       if(videoId !== prevProps.videoId && videoId !== null)  {
           this.getVideoId(videoId)
@@ -50,13 +54,7 @@ class mainVideoDisplay extends Component {
 
     
     
-    render(){
-        // const LikeIncrement = (e) => {
-        //     const { videoId } = this.props;
-        //     axios.put(`http://localhost:9000/api/mainvideo/${videoId}/likes`, videoId.likes)
-        //     .then(res=> console.log(res))
-        // }
-    
+    render(){  
     
         if (this.state.mainVideoDisplay===null){
             return <span className="loading__message">Please wait...</span>
@@ -65,6 +63,7 @@ class mainVideoDisplay extends Component {
 //Deconstructed my state value in line with react best practices
 
         const { mainVideoDisplay } = this.state
+        const { comments } = this.state
     
         return (
 //I then render out pieces of my deconstructed state to to layout my UI.
@@ -89,8 +88,8 @@ class mainVideoDisplay extends Component {
                     
                         <section>
                           <p className="comment__number">{mainVideoDisplay.comments.length} Comments</p>
-                          <Comment videoId = {mainVideoDisplay}/>
-                          <CommentDisplay entry={mainVideoDisplay} />
+                          <Comment videoId = {mainVideoDisplay} comments = {comments} />
+                          <CommentDisplay entry={mainVideoDisplay} comments = {comments} />
                         </section>
                 </div>
             </div>

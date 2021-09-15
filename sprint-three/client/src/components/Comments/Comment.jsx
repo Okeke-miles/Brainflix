@@ -1,23 +1,41 @@
 import React from 'react'
+import { useState, useEffect } from 'react'
 import "../../App.scss"
 import "../Comments/Comment.scss"
 import avatar from "../../assets/images/Mohan-muruge.jpg"
 import axios from "axios"
 
 
-function Comment({ videoId }) {
+function Comment({ videoId, comments }) {
    
 
     const submitHandler = (event) => {
-        event.preventDefault()        
+        event.preventDefault()    
         axios.post( `/api/mainvideo/${videoId.id}/comments`, 
         {comment: event.target.newcomment.value})
         .then(res=> console.log(event.target.newcomment.value))
+       
+    }
+
+    const handleAdd = (event) => {
+        event.target.reset()
+        axios.get(`/api/mainvideo/${videoId.id}`)
+        .then(res => {
+         console.log(res)
+        })
+        .catch(error=>{console.log(error)})
     }
 
     return (
         <div>
-            <form className="comment__form" onSubmit={submitHandler}>
+            <form className="comment__form" 
+            type="reset" 
+            defaultValue="Reset"
+            
+            onSubmit={(event)=>{
+                submitHandler(event)
+                handleAdd(event)
+                }}>
                 <div className="comment-area__style">                    
                     <label className= "label" htmlFor="newcomment" >
                         JOIN THE CONVERSATION

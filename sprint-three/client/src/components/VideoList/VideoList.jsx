@@ -12,7 +12,7 @@ class VideoList extends Component{
   state = {
     videoList: [],
     videoId: null,
-}
+  }
 
 //on mount lifecyle, I set videolist to the data from the API and videoid to a set video id. In order to make sure the dynamic url is functional, I use match.params in an "if statement". Where the match.params does not equal the videoid state and is also not undefined, the state (videoid) is changed to reflect the match.params. I used the && operator to cover for any leakages.
 
@@ -28,21 +28,22 @@ class VideoList extends Component{
 
         let { videoId } = this.props.match.params;
         if(videoId !== this.state.videoList && videoId !== undefined) {
+          
         this.setState({ 
           videoId: videoId
         })}
       })
       .catch(error=>{console.log(error)})
-      }
+    }
 
       
 //on update lifecyle, i compare the current match.params with the previous match.params. This is also to ensure the dynamic url is functional upon each update.
 
     componentDidUpdate(prevProps){
-      let { videoId } = this.props.match.params;   
+      let { videoId } = this.props.match.params   
 
       if(videoId !== prevProps.match.params.videoId)  {
-          this.setState({ videoId: videoId })
+          this.setState({ videoId: videoId }) 
       }   
     }
     
